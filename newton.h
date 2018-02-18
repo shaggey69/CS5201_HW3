@@ -29,7 +29,7 @@ class Newton
 
 		void AddValues(const T & x, const T & y);
 
-		T operator[](const int i) const;
+		T operator[](const int placer) const;
 
 		void makeTable();
 
