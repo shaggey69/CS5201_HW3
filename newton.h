@@ -31,11 +31,22 @@ class Newton
 
 		T operator[](const int placer) const;
 
-		void makeTable();
+		void calcNewton();
 
 		friend ostream& operator<< <T> (ostream& out , const Newton<T> & n);
 
+		T interpolantVals(const T & x) const;
 
+};
+
+template <typename T>
+class Compare
+{
+	public:
+		bool operator() (const tuple <T,T> lhs, const tuple <T,T> rhs) const
+		{
+			return (get<0>(lhs)) < (get<0>(rhs));
+		}
 };
 #include "newton.hpp"
 #endif
