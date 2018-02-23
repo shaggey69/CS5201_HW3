@@ -34,9 +34,13 @@ class Newton
 
 		friend ostream& operator<< <T> (ostream& out , Newton<T> & n);
 
-		T interpolantVals(const T & x);
+		T interpolantVals( T  x);
 
 		void coefficientsPrint();
+
+		T & absErr(const T & x) const;
+
+		T & relErr(const T & x) const;
 
 };
 

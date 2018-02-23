@@ -44,13 +44,23 @@ int main(int argc, char *argv[])
 			my_newton.coefficientsPrint();
 
 			cout <<endl ;
-			for (float i = 0; i < 10 ; i++)
+			for (float i = 0; i <= 10 ; i++)
 				cout << my_newton.interpolantVals(i/10) << endl;
 
-			cout <<endl ;
+			cout << endl;
 
-			for (float i = 0; i < 10 ; i++)
+			for (float i = 0; i <= 10 ; i++)
 				cout << 1/(1+12*pow((i/10),2)) << endl;
+
+			cout << endl;
+
+			for (float i = 0; i <= 10 ; i++)			
+				cout << my_newton.absErr(i/10) << "%" <<endl;
+
+			cout << endl;
+
+			for (float i = 0; i <= 10 ; i++)			
+				cout << my_newton.relErr(i/10) << "%" <<endl;
 
 		}
 	}

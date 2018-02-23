@@ -3,6 +3,7 @@
 #include <vector>
 #include <typeinfo>
 #include <tuple>
+#include <algorithm>
 #include "myArray.h"
 
 using namespace std;
@@ -74,20 +75,16 @@ void Newton<T>::calcNewton()
 }
 
 template <typename T>   
-T Newton<T>::interpolantVals (const T & x) 
+T Newton<T>::interpolantVals ( T x) 
 {
 	T retVal = polyTable[0][0];
-	T temp = 0;
+	T temp = 1;
 	for (int i = 0 ; i < intervalData.getSize()-1 ; i++)
-	{	
-		if (temp == 0)
-			temp = x - get<0>(intervalData[i]);
-		else
-			temp *= (x - get<0>(intervalData[i]));
+	{				
+		temp *= (x - get<0>(intervalData[i]));
 		retVal += temp *(polyTable[i+1][i+1]);
 	}
 	return retVal;
-
 }
 
 
@@ -100,7 +97,6 @@ void Newton<T>::coefficientsPrint()
 }
 
 
-
 template <typename T>   
  ostream& operator<< (ostream& out , Newton<T> & n)
 {
@@ -110,5 +106,19 @@ template <typename T>
   return out;
 }
 
+
+template <typename T>   
+T & Newton<T>::absErr(const T & x) const
+{
+	return (abs( 1/(1+12*pow((x),2)) - interpolantVals(x) )*100);
+}
+
+template <typename T>   
+T & Newton<T>::relErr(const T & x) const
+{	
+	return (abs (absErrPrint(x)/(1/(1+12*pow((x),2)))));
+}
+
+
 //ABS error : (actuel func) - (table)
-//ret error: abs error/actuel func
+//rel error: abs error/actuel func
