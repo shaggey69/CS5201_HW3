@@ -2,32 +2,28 @@
 #include <cmath>
 #include <vector>
 #include <typeinfo>
+#include <tuple>
+#include "myArray.h"
 
 using namespace std;
 
-template <typename T>   
-Newton<T>::Newton()
-{
-}
 
 template <typename T>   
-Newton<T>::~Newton()
+void Newton<T>::AddValues(vector <tuple <T,T> > theDataVec)
 {
-}
-
-template <typename T>   
-void Newton<T>::AddValues(const T & x, const T & y)
-{
-	intervalData.push_back(tuple <T,T> (x,y) );
-	sort(intervalData.begin(),intervalData.end(),Compare<T>());
+	sort(theDataVec.begin(),theDataVec.end(),Compare<T>());
+	intervalData.setSize(theDataVec.size());
+	for (int i = 0 ; i < theDataVec.size(); i++)
+		intervalData.insert(theDataVec[i],i);
 	calcNewton();
+
 	return;
 }
 
 template <typename T>   
 T Newton<T>::operator[](const int placer) const
 {
-	if (placer < intervalData.size())
+	if (placer < intervalData.getSize())
 		return intervalData[placer];
 	return 0;
 }
@@ -36,14 +32,15 @@ template <typename T>
 void Newton<T>::calcNewton()
 {
 	polyTable.clear();
+	polyTable.setSize(intervalData.getSize());
 	vector<T> xValues;
 	vector<T> yValues;
-	for ( auto &i : intervalData)
+	for ( int i = 0 ; i < intervalData.getSize() ; i ++)
 	{
-		xValues.push_back(get<0>(i)) ;
-		yValues.push_back(get<1>(i)) ;
+		xValues.push_back(get<0>(intervalData[i])) ;
+		yValues.push_back(get<1>(intervalData[i])) ;
 	}
-	polyTable.push_back(yValues);
+	polyTable.insert(yValues,0);
 	int size = xValues.size();	
 	for (int j = 1 ; j < size ; j++)
 	{
@@ -63,7 +60,7 @@ void Newton<T>::calcNewton()
 			temp.push_back(numerator/denominator);
 		}
 
-		polyTable.push_back(temp);
+		polyTable.insert(temp,j);
 	}
 	/*
 	for (int t1 = 0 ; t1 < size ; t1++)
@@ -77,24 +74,41 @@ void Newton<T>::calcNewton()
 }
 
 template <typename T>   
-T Newton<T>::interpolantVals (const T & x) const
+T Newton<T>::interpolantVals (const T & x) 
 {
 	T retVal = polyTable[0][0];
 	T temp = 0;
-	for (int i = 0 ; i < intervalData.size()-1 ; i++)
+	for (int i = 0 ; i < intervalData.getSize()-1 ; i++)
 	{	
-		temp += (x - get<0>(intervalData[i]));
+		if (temp == 0)
+			temp = x - get<0>(intervalData[i]);
+		else
+			temp *= (x - get<0>(intervalData[i]));
 		retVal += temp *(polyTable[i+1][i+1]);
 	}
 	return retVal;
 
 }
 
+
 template <typename T>   
- ostream& operator<< (ostream& out , const Newton<T> & n)
+void Newton<T>::coefficientsPrint()
 {
-  for ( auto &i : n.intervalData)
-  	out << get<0>(i) << " " << get<1>(i) << endl;
+	for ( int i = 0 ; i < polyTable.getSize() ; i ++)
+		cout << polyTable[i][i] << endl;
+	return;
+}
+
+
+
+template <typename T>   
+ ostream& operator<< (ostream& out , Newton<T> & n)
+{
+  for ( int i = 0 ; i < n.intervalData.getSize() ; i ++)
+  	out << get<0>(n.intervalData[i]) << " " 
+		<< get<1>(n.intervalData[i]) << endl;
   return out;
 }
 
+//ABS error : (actuel func) - (table)
+//ret error: abs error/actuel func
