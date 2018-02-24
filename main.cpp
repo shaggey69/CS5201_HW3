@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
 {	
 	ifstream in;
 	int num_of_paris = 0 ;
-	vector < tuple<float,float> > dataVec;
-	Newton<float> my_newton;
-	float temp1 = 0 , temp2 = 0;
+	vector < tuple<double ,double > > dataVec;
+	Newton<double > my_newton;
+	double  temp1 = 0 , temp2 = 0;
 
 	if (argc < 2)
     cout << endl << "not enough inputs :(" << endl ;
@@ -45,7 +45,10 @@ int main(int argc, char *argv[])
 
 			cout <<endl ;
 			for (float i = 0; i <= 10 ; i++)
+			{
+				cout << setprecision(8);
 				cout << my_newton.interpolantVals(i/10) << endl;
+			}
 
 			cout << endl;
 
@@ -53,49 +56,17 @@ int main(int argc, char *argv[])
 				cout << 1/(1+12*pow((i/10),2)) << endl;
 
 			cout << endl;
-
-			for (float i = 0; i <= 10 ; i++)			
-				cout << my_newton.absErr(i/10) << "%" <<endl;
-
+	
+			for (float i = 0; i <= 10 ; i++)	
+				cout << my_newton.absErr(i/10) << endl;
+			
 			cout << endl;
 
 			for (float i = 0; i <= 10 ; i++)			
-				cout << my_newton.relErr(i/10) << "%" <<endl;
-
+				cout << my_newton.relErr(i/10) << endl;
+				
 		}
 	}
-
-	/*
-	Newton<float> godBless;
-	
-	
-	vector < tuple<float,float> > test;
-
-	test.push_back(make_tuple(2,15));
-	test.push_back(make_tuple(3,39));
-	test.push_back(make_tuple(6,243));
-	test.push_back(make_tuple(7,375));
-	test.push_back(make_tuple(9,771));
-	
-	godBless.AddValues(test);
-
-	cout << godBless.interpolantVals(5) << endl ; // (5) 147
-
-	
-	vector < tuple<float,float> > test;
-
-	test.push_back(make_tuple(0,648));
-	test.push_back(make_tuple(2,704));
-	test.push_back(make_tuple(6,792));
-	test.push_back(make_tuple(3,729));
-
-	godBless.AddValues(test);
-
-	cout << godBless.interpolantVals(4) << endl ; //(4) 752
-
-	*/
-
-
 
 
 	in.close();

@@ -14,7 +14,7 @@ void Newton<T>::AddValues(vector <tuple <T,T> > theDataVec)
 {
 	sort(theDataVec.begin(),theDataVec.end(),Compare<T>());
 	intervalData.setSize(theDataVec.size());
-	for (int i = 0 ; i < theDataVec.size(); i++)
+	for (int i = 0 ; i < intervalData.getSize() ; i++)
 		intervalData.insert(theDataVec[i],i);
 	calcNewton();
 
@@ -63,19 +63,12 @@ void Newton<T>::calcNewton()
 
 		polyTable.insert(temp,j);
 	}
-	/*
-	for (int t1 = 0 ; t1 < size ; t1++)
-	{
-		for (int t2 = 0 ; t2 < size ; t2++)
-				cout << polyTable[t2][t1] << " " ;
-		cout << endl ;
-	}
-	*/
+
 	return;
 }
 
 template <typename T>   
-T Newton<T>::interpolantVals ( T x) 
+T Newton<T>::interpolantVals ( const T & x) 
 {
 	T retVal = polyTable[0][0];
 	T temp = 1;
@@ -108,15 +101,15 @@ template <typename T>
 
 
 template <typename T>   
-T & Newton<T>::absErr(const T & x) const
-{
-	return (abs( 1/(1+12*pow((x),2)) - interpolantVals(x) )*100);
+T  Newton<T>::absErr(const T & x)
+{	
+	return (fabs( 1/(1+12*pow((x),2)) - interpolantVals(x) )*100);
 }
 
 template <typename T>   
-T & Newton<T>::relErr(const T & x) const
+T Newton<T>::relErr(const T & x) 
 {	
-	return (abs (absErrPrint(x)/(1/(1+12*pow((x),2)))));
+	return (fabs(absErr(x)/(1/(1+12*pow((x),2)))));
 }
 
 
