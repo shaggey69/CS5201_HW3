@@ -1,0 +1,156 @@
+\hypertarget{classNewton}{}\section{Newton$<$ T $>$ Class Template Reference}
+\label{classNewton}\index{Newton$<$ T $>$@{Newton$<$ T $>$}}
+
+
+{\ttfamily \#include $<$newton.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNewton_a42347f7d7cbfe699bddf8cb74ae9645d}{Add\+Values} (vector$<$ tuple$<$ T, T $>$ $>$ the\+Data\+Vec)
+\item 
+T \hyperlink{classNewton_a0eab8712e66fed6189ad3d2f691972aa}{operator\mbox{[}$\,$\mbox{]}} (const int placer) const 
+\item 
+T \hyperlink{classNewton_a7baf01223ebc374c82a4ee7a0c919954}{interpolant\+Vals} (const T \&x)
+\item 
+void \hyperlink{classNewton_a17b9c9dbdf7033d63571ed2106b3d18e}{coefficients\+Print} ()
+\item 
+T \hyperlink{classNewton_abfb1cb15bb82971fa3b2d9d3fa2a3ab6}{abs\+Err} (const T \&x)
+\item 
+T \hyperlink{classNewton_a99f0781abd1b14be345694c9e321540f}{rel\+Err} (const T \&x)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classNewton_a01166949d7a7c3e8518eeb3ce99e6678}{operator} (ostream \&out, \hyperlink{classNewton}{Newton}$<$ T $>$ \&n)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\\*
+class Newton$<$ T $>$}
+
+The \hyperlink{classNewton}{Newton} Class.
+
+contains 2 my\+Array objects\+: interval\+Data -\/ contains tuples of type T and T of data points. Poly\+Table -\/ contains Vectors of type T that hold the data for \hyperlink{classNewton}{Newton} Polynomial Divdion. 
+
+\subsection{Member Function Documentation}
+\index{Newton@{Newton}!abs\+Err@{abs\+Err}}
+\index{abs\+Err@{abs\+Err}!Newton@{Newton}}
+\subsubsection[{\texorpdfstring{abs\+Err(const T \&x)}{absErr(const T &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf Newton}$<$ T $>$\+::abs\+Err (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classNewton_abfb1cb15bb82971fa3b2d9d3fa2a3ab6}{}\label{classNewton_abfb1cb15bb82971fa3b2d9d3fa2a3ab6}
+Abslotre error of given x from \hyperlink{classNewton}{Newton} Polynomial Divdion as oppsed to the function 1/(1+12x$^\wedge$2)
+
+\begin{DoxyPrecond}{Precondition}
+meets requirments of \char`\"{}interpolant\+Vals\char`\"{} functions and \char`\"{}$<$$<$\char`\"{} defined for T 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+none 
+\end{DoxyPostcond}
+\index{Newton@{Newton}!Add\+Values@{Add\+Values}}
+\index{Add\+Values@{Add\+Values}!Newton@{Newton}}
+\subsubsection[{\texorpdfstring{Add\+Values(vector$<$ tuple$<$ T, T $>$ $>$ the\+Data\+Vec)}{AddValues(vector< tuple< T, T > > theDataVec)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Newton}$<$ T $>$\+::Add\+Values (
+\begin{DoxyParamCaption}
+\item[{vector$<$ tuple$<$ T, T $>$ $>$}]{the\+Data\+Vec}
+\end{DoxyParamCaption}
+)}\hypertarget{classNewton_a42347f7d7cbfe699bddf8cb74ae9645d}{}\label{classNewton_a42347f7d7cbfe699bddf8cb74ae9645d}
+Add data points to interval\+Data. Each tuple from the\+Data\+Vec will be added to interval\+Data and calc\+Newton function will be called! \begin{DoxyPrecond}{Precondition}
+\textquotesingle{}$<$\textquotesingle{} operator defind for T! 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+interval\+Data will contain the number of tupels in the\+Data\+Vec. 
+\end{DoxyPostcond}
+\index{Newton@{Newton}!coefficients\+Print@{coefficients\+Print}}
+\index{coefficients\+Print@{coefficients\+Print}!Newton@{Newton}}
+\subsubsection[{\texorpdfstring{coefficients\+Print()}{coefficientsPrint()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Newton}$<$ T $>$\+::coefficients\+Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classNewton_a17b9c9dbdf7033d63571ed2106b3d18e}{}\label{classNewton_a17b9c9dbdf7033d63571ed2106b3d18e}
+prints the cofficents of the Polynomial
+
+\begin{DoxyPrecond}{Precondition}
+none 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+values printed on screen 
+\end{DoxyPostcond}
+\index{Newton@{Newton}!interpolant\+Vals@{interpolant\+Vals}}
+\index{interpolant\+Vals@{interpolant\+Vals}!Newton@{Newton}}
+\subsubsection[{\texorpdfstring{interpolant\+Vals(const T \&x)}{interpolantVals(const T &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf Newton}$<$ T $>$\+::interpolant\+Vals (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classNewton_a7baf01223ebc374c82a4ee7a0c919954}{}\label{classNewton_a7baf01223ebc374c82a4ee7a0c919954}
+calculates the values of the interpolant at the given x Value
+
+\begin{DoxyPrecond}{Precondition}
+\char`\"{}=\char`\"{} \char`\"{}$\ast$=\char`\"{} \char`\"{}+=\char`\"{} operators are defined for {\ttfamily T}, And Poly\+Table must have at least one memeber. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+none 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+the value of x at interpolant point. 
+\end{DoxyReturn}
+\index{Newton@{Newton}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Newton@{Newton}}
+\subsubsection[{\texorpdfstring{operator[](const int placer) const }{operator[](const int placer) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf Newton}$<$ T $>$\+::{\bf operator}\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{placer}
+\end{DoxyParamCaption}
+) const}\hypertarget{classNewton_a0eab8712e66fed6189ad3d2f691972aa}{}\label{classNewton_a0eab8712e66fed6189ad3d2f691972aa}
+object getter \mbox{[}\mbox{]}
+
+\begin{DoxyPrecond}{Precondition}
+placer must be between 0 and size of interval\+Data. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Will return the Tuple of type T and T that is is stored in interval\+Data at the \char`\"{}placer\char`\"{} index. 
+\end{DoxyPostcond}
+\index{Newton@{Newton}!rel\+Err@{rel\+Err}}
+\index{rel\+Err@{rel\+Err}!Newton@{Newton}}
+\subsubsection[{\texorpdfstring{rel\+Err(const T \&x)}{relErr(const T &x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf Newton}$<$ T $>$\+::rel\+Err (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classNewton_a99f0781abd1b14be345694c9e321540f}{}\label{classNewton_a99f0781abd1b14be345694c9e321540f}
+Relative error of given x from \hyperlink{classNewton}{Newton} Polynomial Divdion as oppsed to the function 1/(1+12x$^\wedge$2)
+
+\begin{DoxyPrecond}{Precondition}
+meets requirments of \char`\"{}interpolant\+Vals\char`\"{} functions 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+none 
+\end{DoxyPostcond}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Newton@{Newton}!operator@{operator}}
+\index{operator@{operator}!Newton@{Newton}}
+\subsubsection[{\texorpdfstring{operator}{operator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ ostream\& operator (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{{\bf Newton}$<$ T $>$ \&}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classNewton_a01166949d7a7c3e8518eeb3ce99e6678}{}\label{classNewton_a01166949d7a7c3e8518eeb3ce99e6678}
+Stream insertion operator for {\ttfamily \hyperlink{classNewton}{Newton}}.
+
+\begin{DoxyPrecond}{Precondition}
+Stream insertion operator is defined for {\ttfamily T}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The contents of the interval\+Data are printed to the ouptut stream. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+the modified output stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{newton_8h}{newton.\+h}\item 
+newton.\+hpp\end{DoxyCompactItemize}

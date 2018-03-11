@@ -1,0 +1,46 @@
+\hypertarget{newton_8h}{}\section{newton.\+h File Reference}
+\label{newton_8h}\index{newton.\+h@{newton.\+h}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$tuple$>$}\\*
+{\ttfamily \#include \char`\"{}my\+Array.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}newton.\+hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classNewton}{Newton$<$ T $>$}
+\item 
+class \hyperlink{classNewton}{Newton$<$ T $>$}
+\item 
+class \hyperlink{classCompare}{Compare$<$ T $>$}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\ostream \& \hyperlink{newton_8h_a601c046cff29b1d397c133d28969469f}{operator$<$$<$} (ostream \&out, \hyperlink{classNewton}{Newton}$<$ T $>$ \&n)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{classNewton}{Newton} polynomial class. 
+
+\subsection{Function Documentation}
+\index{newton.\+h@{newton.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!newton.\+h@{newton.\+h}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(ostream \&out, Newton$<$ T $>$ \&n)}{operator<<(ostream &out, Newton< T > &n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{{\bf Newton}$<$ T $>$ \&}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{newton_8h_a601c046cff29b1d397c133d28969469f}{}\label{newton_8h_a601c046cff29b1d397c133d28969469f}
+Stream insertion operator for {\ttfamily \hyperlink{classNewton}{Newton}}.
+
+\begin{DoxyPrecond}{Precondition}
+Stream insertion operator is defined for {\ttfamily T}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The contents of the interval\+Data are printed to the ouptut stream. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+the modified output stream. 
+\end{DoxyReturn}

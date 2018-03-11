@@ -1,0 +1,230 @@
+\hypertarget{classMyArray}{}\section{My\+Array$<$ T $>$ Class Template Reference}
+\label{classMyArray}\index{My\+Array$<$ T $>$@{My\+Array$<$ T $>$}}
+
+
+{\ttfamily \#include $<$my\+Array.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMyArray_a5e2f56ae6e3b87c1635bedf8b4b76fb9}{My\+Array} (const int size)
+\item 
+\hyperlink{classMyArray_acb3cd41349cf47f00e119061894929a6}{My\+Array} ()
+\item 
+\hyperlink{classMyArray_a03c11ccacb545bdcaf686747d3dc741d}{My\+Array} (const \hyperlink{classMyArray}{My\+Array}$<$ T $>$ \&rhs)
+\item 
+\hyperlink{classMyArray_a55bc32d921ca509c9820549cb8baac22}{$\sim$\+My\+Array} ()
+\item 
+T \& \hyperlink{classMyArray_a49f2d5aa8d69d077b1c17f076f097406}{operator\mbox{[}$\,$\mbox{]}} (const int index)
+\item 
+int \hyperlink{classMyArray_a0b7673af1b2f8d69f9345b3fd817cce4}{get\+Size} () const 
+\item 
+void \hyperlink{classMyArray_ab2e0c78689ddcfd142dbef361b7c0339}{set\+Size} (const int n)
+\item 
+void \hyperlink{classMyArray_a631fd2535793febd2f7acd7c70ca94b6}{clear} ()
+\item 
+\hyperlink{classMyArray}{My\+Array}$<$ T $>$ \& \hyperlink{classMyArray_a2f16f482ff8b1f600d288a9ca04c2658}{operator=} (const \hyperlink{classMyArray}{My\+Array}$<$ T $>$ \&rhs)
+\item 
+\hyperlink{classMyArray}{My\+Array}$<$ T $>$ \& \hyperlink{classMyArray_a04128aefb2c6a87d84cc29fdc6aeade7}{operator=} (const T)
+\item 
+void \hyperlink{classMyArray_a0c00635e4361df03eff1c371c1ab5567}{insert} (const T \&x, int pos)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classMyArray_affe58e61c0c2cd8a54240bb543d827aa}{operator} (ostream \&out, \hyperlink{classMyArray}{My\+Array}$<$ T $>$ \&arr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\\*
+class My\+Array$<$ T $>$}
+
+my\+Array calss
+
+contains a\+: m\+\_\+size -\/ represting the size of the array ptr\+\_\+to\+\_\+data -\/ a pointer to the beginning of the array 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{My\+Array@{My\+Array}!My\+Array@{My\+Array}}
+\index{My\+Array@{My\+Array}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{My\+Array(const int size)}{MyArray(const int size)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf My\+Array}$<$ T $>$\+::{\bf My\+Array} (
+\begin{DoxyParamCaption}
+\item[{const int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_a5e2f56ae6e3b87c1635bedf8b4b76fb9}{}\label{classMyArray_a5e2f56ae6e3b87c1635bedf8b4b76fb9}
+initialize constructor. A new Array is craeted length equel \char`\"{}size\char`\"{} \begin{DoxyPrecond}{Precondition}
+size must be bigger then 0! 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+a \hyperlink{classMyArray}{My\+Array} is born! 
+\end{DoxyPostcond}
+\index{My\+Array@{My\+Array}!My\+Array@{My\+Array}}
+\index{My\+Array@{My\+Array}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{My\+Array()}{MyArray()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf My\+Array}$<$ T $>$\+::{\bf My\+Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_acb3cd41349cf47f00e119061894929a6}{}\label{classMyArray_acb3cd41349cf47f00e119061894929a6}
+defult constructor. A new Array is craeted with size 0 and ptr\+\_\+to\+\_\+data points to 0. \begin{DoxyPrecond}{Precondition}
+none 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+a \hyperlink{classMyArray}{My\+Array} is born! 
+\end{DoxyPostcond}
+\index{My\+Array@{My\+Array}!My\+Array@{My\+Array}}
+\index{My\+Array@{My\+Array}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{My\+Array(const My\+Array$<$ T $>$ \&rhs)}{MyArray(const MyArray< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf My\+Array}$<$ T $>$\+::{\bf My\+Array} (
+\begin{DoxyParamCaption}
+\item[{const {\bf My\+Array}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_a03c11ccacb545bdcaf686747d3dc741d}{}\label{classMyArray_a03c11ccacb545bdcaf686747d3dc741d}
+copy constructor. A new Array is craeted length equel to R\+HS size. New array does N\+OT point to same adress as R\+HS. \begin{DoxyPrecond}{Precondition}
+
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+a \hyperlink{classMyArray}{My\+Array} is born! 
+\end{DoxyPostcond}
+\index{My\+Array@{My\+Array}!````~My\+Array@{$\sim$\+My\+Array}}
+\index{````~My\+Array@{$\sim$\+My\+Array}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{$\sim$\+My\+Array()}{~MyArray()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf My\+Array}$<$ T $>$\+::$\sim${\bf My\+Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_a55bc32d921ca509c9820549cb8baac22}{}\label{classMyArray_a55bc32d921ca509c9820549cb8baac22}
+deconstructor.
+
+An Arnold Schwarzenegger Terminates the pointer to avoid Skynet taking over with their memorey Leacks. \char`\"{} Hasta La Vista , Pointer \char`\"{} 
+
+\subsection{Member Function Documentation}
+\index{My\+Array@{My\+Array}!clear@{clear}}
+\index{clear@{clear}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf My\+Array}$<$ T $>$\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_a631fd2535793febd2f7acd7c70ca94b6}{}\label{classMyArray_a631fd2535793febd2f7acd7c70ca94b6}
+clear emptys out the array! \begin{DoxyPrecond}{Precondition}
+none 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ptr\+\_\+to\+\_\+data points to 0 
+\end{DoxyPostcond}
+\index{My\+Array@{My\+Array}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{get\+Size() const }{getSize() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf My\+Array}$<$ T $>$\+::get\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMyArray_a0b7673af1b2f8d69f9345b3fd817cce4}{}\label{classMyArray_a0b7673af1b2f8d69f9345b3fd817cce4}
+get size!
+
+\begin{DoxyPrecond}{Precondition}
+none 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+none 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+size of array 
+\end{DoxyReturn}
+\index{My\+Array@{My\+Array}!insert@{insert}}
+\index{insert@{insert}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{insert(const T \&x, int pos)}{insert(const T &x, int pos)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf My\+Array}$<$ T $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_a0c00635e4361df03eff1c371c1ab5567}{}\label{classMyArray_a0c00635e4361df03eff1c371c1ab5567}
+insert insert T elment into Array at the \char`\"{}pos\char`\"{} index \begin{DoxyPrecond}{Precondition}
+pos must be smaller then m\+\_\+size! 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+array modified with new element 
+\end{DoxyPostcond}
+\index{My\+Array@{My\+Array}!operator=@{operator=}}
+\index{operator=@{operator=}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{operator=(const My\+Array$<$ T $>$ \&rhs)}{operator=(const MyArray< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf My\+Array}$<$ T $>$ \& {\bf My\+Array}$<$ T $>$\+::{\bf operator}= (
+\begin{DoxyParamCaption}
+\item[{const {\bf My\+Array}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_a2f16f482ff8b1f600d288a9ca04c2658}{}\label{classMyArray_a2f16f482ff8b1f600d288a9ca04c2658}
+= assignment turns the CO array into R\+HS arry \begin{DoxyPrecond}{Precondition}
+none 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ptr\+\_\+to\+\_\+data points to rhs data 
+\end{DoxyPostcond}
+\index{My\+Array@{My\+Array}!operator=@{operator=}}
+\index{operator=@{operator=}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{operator=(const T)}{operator=(const T)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf My\+Array}$<$ T $>$ \& {\bf My\+Array}$<$ T $>$\+::{\bf operator}= (
+\begin{DoxyParamCaption}
+\item[{const T}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_a04128aefb2c6a87d84cc29fdc6aeade7}{}\label{classMyArray_a04128aefb2c6a87d84cc29fdc6aeade7}
+= assignment assigns T to the CO \begin{DoxyPrecond}{Precondition}
+\char`\"{}=\char`\"{} assignment must be defined for T 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+none 
+\end{DoxyPostcond}
+\index{My\+Array@{My\+Array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{operator[](const int index)}{operator[](const int index)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf My\+Array}$<$ T $>$\+::{\bf operator}\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_a49f2d5aa8d69d077b1c17f076f097406}{}\label{classMyArray_a49f2d5aa8d69d077b1c17f076f097406}
+object getter \mbox{[}\mbox{]}
+
+\begin{DoxyPrecond}{Precondition}
+index must be between 0 and m\+\_\+size 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+none 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Will return the value of T at the index 
+\end{DoxyReturn}
+\index{My\+Array@{My\+Array}!set\+Size@{set\+Size}}
+\index{set\+Size@{set\+Size}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{set\+Size(const int n)}{setSize(const int n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf My\+Array}$<$ T $>$\+::set\+Size (
+\begin{DoxyParamCaption}
+\item[{const int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyArray_ab2e0c78689ddcfd142dbef361b7c0339}{}\label{classMyArray_ab2e0c78689ddcfd142dbef361b7c0339}
+set size!
+
+\begin{DoxyPrecond}{Precondition}
+n must be postive 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+none 
+\end{DoxyPostcond}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{My\+Array@{My\+Array}!operator@{operator}}
+\index{operator@{operator}!My\+Array@{My\+Array}}
+\subsubsection[{\texorpdfstring{operator}{operator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ ostream\& operator (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{{\bf My\+Array}$<$ T $>$ \&}]{arr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classMyArray_affe58e61c0c2cd8a54240bb543d827aa}{}\label{classMyArray_affe58e61c0c2cd8a54240bb543d827aa}
+Stream insertion operator for {\ttfamily my\+Array}.
+
+\begin{DoxyPrecond}{Precondition}
+Stream insertion operator is defined for {\ttfamily T}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The contents of the interval\+Data are printed to the ouptut stream. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+the modified output stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{myArray_8h}{my\+Array.\+h}\item 
+my\+Array.\+hpp\end{DoxyCompactItemize}

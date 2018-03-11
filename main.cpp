@@ -1,3 +1,9 @@
+/*
+# main file for the third Prgram!
+# By: Ari Sherman
+# Class: CS5201 HW #3
+# Date: 2.26.18
+*/
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -11,6 +17,7 @@
 using namespace std;
 int main(int argc, char *argv[])
 {	
+	//declartion of vars
 	ifstream in;
 	int num_of_paris = 0 ;
 	vector < tuple<double ,double > > dataVec;
@@ -42,7 +49,8 @@ int main(int argc, char *argv[])
 			my_newton.AddValues(dataVec);
 			cout << my_newton <<endl;
 			my_newton.coefficientsPrint();
-
+						
+			// interpolant values print
 			cout <<endl ;
 			for (float i = 0; i <= 10 ; i++)
 			{
@@ -51,23 +59,25 @@ int main(int argc, char *argv[])
 			}
 
 			cout << endl;
-
+			
+			// 1/1+12x^2 function print
 			for (float i = 0; i <= 10 ; i++)
 				cout << 1/(1+12*pow((i/10),2)) << endl;
 
 			cout << endl;
-	
+		
+			//abslote error print
 			for (float i = 0; i <= 10 ; i++)	
 				cout << my_newton.absErr(i/10) << endl;
 			
 			cout << endl;
 
+			//relative error print
 			for (float i = 0; i <= 10 ; i++)			
 				cout << my_newton.relErr(i/10) << endl;
 				
 		}
 	}
-
 
 	in.close();
 

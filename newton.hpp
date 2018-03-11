@@ -1,3 +1,9 @@
+/*
+# Newton class functoins
+# By: Ari Sherman
+# Class: CS5201 HW #3
+# Date: 2.26.18
+*/
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -8,7 +14,7 @@
 
 using namespace std;
 
-
+// Add data points to intervalData.
 template <typename T>   
 void Newton<T>::AddValues(vector <tuple <T,T> > theDataVec)
 {
@@ -21,6 +27,7 @@ void Newton<T>::AddValues(vector <tuple <T,T> > theDataVec)
 	return;
 }
 
+//operator []
 template <typename T>   
 T Newton<T>::operator[](const int placer) const
 {
@@ -29,6 +36,7 @@ T Newton<T>::operator[](const int placer) const
 	return 0;
 }
 
+//caluclate Newton Polynomial Divdion fucntion
 template <typename T>   
 void Newton<T>::calcNewton()
 {
@@ -66,7 +74,7 @@ void Newton<T>::calcNewton()
 
 	return;
 }
-
+ //interpolantVals calculation function
 template <typename T>   
 T Newton<T>::interpolantVals ( const T & x) 
 {
@@ -80,7 +88,7 @@ T Newton<T>::interpolantVals ( const T & x)
 	return retVal;
 }
 
-
+// coefficent printer function
 template <typename T>   
 void Newton<T>::coefficientsPrint()
 {
@@ -89,7 +97,7 @@ void Newton<T>::coefficientsPrint()
 	return;
 }
 
-
+//print
 template <typename T>   
  ostream& operator<< (ostream& out , Newton<T> & n)
 {
@@ -99,13 +107,14 @@ template <typename T>
   return out;
 }
 
-
+// Absloute error
 template <typename T>   
 T  Newton<T>::absErr(const T & x)
 {	
-	return (fabs( 1/(1+12*pow((x),2)) - interpolantVals(x) )*100);
+	return (fabs( 1/(1+12*pow((x),2)) - interpolantVals(x) ) *100);
 }
 
+// Relative error
 template <typename T>   
 T Newton<T>::relErr(const T & x) 
 {	
